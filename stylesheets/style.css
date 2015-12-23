@@ -1,0 +1,150 @@
+/* Basic reset */
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+
+	/* Better text styling */
+}
+html {
+  height: 100%;
+	background: radial-gradient(circle, #95A5A6, #DADFE1);
+	background-size: cover;
+	font-size: 24px; 
+  font-family: "Raleway", Arial, sans-serif;
+}
+.header {
+  padding: 10px;
+}
+
+small {
+  font-size: 40%;
+  color: #95A5A6;
+}
+a {
+  color: #BDC3C7;
+}
+i {
+  margin-right: 12px;
+}
+h3 {
+  text-align: center;
+  font-family: "Megrim", cursive;
+  color: #95A5A6;
+}
+/* Using box shadows to create 3D effects */
+#calculator {
+	width: 325px;
+	height: auto;
+
+	margin: 100px auto;
+	padding: 20px 20px 9px;
+
+	background: #67809F;
+
+	border-radius: 3px;
+	box-shadow: 0px 4px #009de4, 0px 10px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Top portion */
+.top span.clear {
+	float: left;
+}
+
+/* Inset shadow on the screen to create indent */
+.top .screen {
+	height: 40px;
+	width: 212px;
+
+	float: right;
+
+	padding: 0 10px;
+
+	background: rgba(0, 0, 0, 0.2);
+	border-radius: 3px;
+	box-shadow: inset 0px 4px rgba(0, 0, 0, 0.2);
+
+	/* Typography */
+	font-size: 17px;
+	line-height: 40px;
+	color: white;
+	text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+	text-align: right;
+	letter-spacing: 1px;
+}
+
+/* Clear floats */
+.keys, .top {overflow: hidden;}
+
+/* Applying same to the keys */
+.keys span, .top span.clear {
+	float: left;
+	position: relative;
+	top: 0;
+
+	cursor: pointer;
+
+	width: 66px;
+	height: 36px;
+
+	background: white;
+	border-radius: 3px;
+	box-shadow: 0px 4px rgba(0, 0, 0, 0.2);
+
+	margin: 0 7px 11px 0;
+
+	color: #888;
+	line-height: 36px;
+	text-align: center;
+
+	/* prevent selection of text inside keys */
+	user-select: none;
+
+	/* Smoothing out hover and active states using css3 transitions */
+	transition: all 0.2s ease;
+}
+
+/* Remove right margins from operator keys */
+/* style different type of keys (operators/evaluate/clear) differently */
+.keys span.operator {
+	background: #00B16A;
+	margin-right: 0;
+  color: #FFF;
+}
+
+.keys span.eval {
+	background: #F5AB35;
+	box-shadow: 0px 4px #F39C12;
+	color: #FFF;
+}
+
+.top span.clear {
+	background: #D24D57;
+	box-shadow: 0px 4px #D91E18;
+	color: white;
+}
+
+/* Some hover effects */
+.keys span:hover {
+	background: #D2D7D3;
+  }
+
+.keys span.eval:hover {
+	background: #F39C12;
+	box-shadow: 0px 4px #717a33;
+	color: #ffffff;
+}
+
+.top span.clear:hover {
+	background: #D91E18;
+	color: white;
+}
+ .keys span.operator:hover {
+	background: #019875;
+  color: #FFF;
+}
+/* Simulating "pressed" effect on active state of the keys by removing the box-shadow and moving the keys down a bit */
+.keys span:active {
+	box-shadow: 0px 0px #6b54d3;
+	top: 4px;
+}
